@@ -1,8 +1,8 @@
-### 📊 `socsci-metro`: A Metropolis-Based Beamer Theme for Social Science Presentations
+# 📊 `socsci-metro`: A Metropolis-Based Beamer Theme for Social Science Presentations
 
 **`socsci-metro`** is a LaTeX Beamer theme built on top of `metropolis`, tailored for social science, sociology, and empirical research presentations. It enhances the clean visual style of `metropolis` with structure and function specific to research communication.
 
-#### ✨ Features
+## ✨ Features
 
 - 🧭 **Minimalist top navigation bar**  
   Clean, compact, and space-efficient — redesigned to avoid visual clutter while still indicating progress and section flow.
@@ -21,11 +21,11 @@
 - 🧾 **Roman numeral continuation for multi-part frames**  
   Automatically numbered `(I)`, `(II)`, etc., for slides that extend a single topic.
 
-#### 📷 Example Slide
+## 📷 Example Slide
 
 ![Example Slide](./example_slide.png)
 
-#### 🛠 Usage
+## 🛠 Usage
 
 ```latex
 \usepackage{socsci-metro}  % Make sure this .sty file is in the same folder or LaTeX path
@@ -43,15 +43,19 @@ Mixed-effects model with interaction terms for welfare type × year.
 \end{methodbox}
 ```
 
-#### 📁 Contents
+## 📁 Contents
 
 - `socsci-metro.sty` — The Beamer theme
 - `demo.tex` — Minimal working example
 - `README.md` — This file
 
-#### 🧑‍🏫 Designed For
+## 🧑‍🏫 Designed For
 
 - Sociology, political science, public policy, communication studies
 - Students, instructors, and researchers giving structured academic talks
 - Presentations using methods from social statistics and empirical research
+
+## 📜 License
+
+MIT License. See `LICENSE` for details.
 
