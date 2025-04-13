@@ -1,0 +1,219 @@
+% genderbeamer.sty
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{socscimetro}[2025/04/13 Custom Beamer Theme for Gender & STEM Presentation]
+
+% Load required packages
+\RequirePackage{etoolbox}
+\RequirePackage{enumitem}
+\RequirePackage{setspace}
+\RequirePackage{booktabs}
+\RequirePackage[table]{xcolor}
+\RequirePackage{hyperref}
+\RequirePackage{graphicx}
+\RequirePackage{natbib}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{pgffor}
+
+% Set beamer base and theme
+\mode<presentation>
+\usetheme{metropolis}
+\useoutertheme[compress,subsection=false,shadow=false]{miniframes}
+
+% Bullet formatting
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{\textopenbullet}
+\setlength{\labelsep}{0.8em}
+
+% List customization
+\setlist[itemize,1]{itemsep=5pt, topsep=5pt, label=\usebeamertemplate{itemize item}}
+\setlist[itemize,2]{itemsep=4pt, topsep=2pt, label=\usebeamertemplate{itemize subitem}, font=\small}
+\setlist[enumerate,1]{itemsep=4pt, topsep=4pt, labelsep = 3pt, label=\arabic* \textbar\ }
+\setlist[enumerate,2]{label=\alph* \textbar\ }
+\setlist[enumerate,3]{label=\roman* \textbar\ }
+
+% Hyperref customization
+\definecolor{darkgreen}{HTML}{1f663a}
+\hypersetup{
+    colorlinks=true,
+    allcolors=darkgreen
+}
+
+% Bibliography style
+\bibliographystyle{apalike}
+
+% Command for referencing
+\newcommand{\reff}[2]{\hyperref[#2]{#1~\ref{#2}}}
+
+% Frame title continuation with Roman numeral
+\makeatletter
+\newcounter{framenumberroman}
+\setbeamertemplate{frametitle continuation}{
+  \stepcounter{framenumberroman}%
+  (\Roman{framenumberroman})
+}
+\AtBeginEnvironment{frame}{%
+  \setcounter{framenumberroman}{0}%
+}
+\makeatother
+
+% Color definitions
+\definecolor{rqbg}{HTML}{FFF5EB}
+\definecolor{rqborder}{HTML}{E57C39}
+\definecolor{notesbg}{HTML}{FFF1F0}
+\definecolor{notesborder}{HTML}{E55C5C}
+\definecolor{hypobg}{HTML}{F0F6FF}
+\definecolor{hypoborder}{HTML}{5591D2}
+\definecolor{methodbg}{HTML}{F7F0FF}
+\definecolor{methodborder}{HTML}{9370DB}
+\definecolor{findingsbg}{HTML}{F0FAF5}
+\definecolor{findingsborder}{HTML}{2E8B57}
+
+% Box counters
+\newcounter{rqboxcounter}
+\newcounter{hypoboxcounter}
+\newcounter{methodboxcounter}
+\newcounter{findingsboxcounter}
+\newcounter{notesboxcounter}
+
+% Box styles
+\newtcolorbox{rqbox}{
+  enhanced,
+  fontupper=\small,
+  coltext=.,
+  colback=rqbg,
+  colframe=rqborder,
+  boxrule=0pt,
+  leftrule=3pt,
+  arc=2pt,
+  left=6pt, right=6pt,
+  top=5pt, bottom=5pt,
+  before upper={%
+    \refstepcounter{rqboxcounter}%
+    \textbf{\textcolor{rqborder}{Research Question (\Roman{rqboxcounter})}}\\
+  }
+}
+
+\newtcolorbox{notesbox}{
+  enhanced,
+  fontupper=\small,
+  coltext=.,
+  colback=notesbg,
+  colframe=notesborder,
+  boxrule=0pt,
+  leftrule=3pt,
+  arc=2pt,
+  left=6pt, right=6pt,
+  top=5pt, bottom=5pt,
+  before upper={%
+    \refstepcounter{notesboxcounter}%
+    \textbf{\textcolor{notesborder}{Notes}}\\
+  }
+}
+
+\newtcolorbox{hypobox}{
+  enhanced,
+  fontupper=\small,
+  coltext=.,
+  colback=hypobg,
+  colframe=hypoborder,
+  boxrule=0pt,
+  leftrule=3pt,
+  arc=2pt,
+  left=6pt, right=6pt,
+  top=5pt, bottom=5pt,
+  before upper={%
+    \refstepcounter{hypoboxcounter}%
+    \textbf{\textcolor{hypoborder}{Hypothesis (\Roman{hypoboxcounter})}}\\
+  }
+}
+
+\newtcolorbox{methodbox}{
+  enhanced,
+  fontupper=\small,
+  coltext=.,
+  colback=methodbg,
+  colframe=methodborder,
+  boxrule=0pt,
+  leftrule=3pt,
+  arc=2pt,
+  left=6pt, right=6pt,
+  top=5pt, bottom=5pt,
+  before upper={%
+    \refstepcounter{methodboxcounter}%
+    \textbf{\textcolor{methodborder}{Methodology (\Roman{methodboxcounter})}}\\
+  }
+}
+
+\newtcolorbox{findingsbox}{
+  enhanced,
+  fontupper=\small,
+  coltext=.,
+  colback=findingsbg,
+  colframe=findingsborder,
+  boxrule=0pt,
+  leftrule=3pt,
+  arc=2pt,
+  left=6pt, right=6pt,
+  top=5pt, bottom=5pt,
+  before upper={%
+    \refstepcounter{findingsboxcounter}%
+    \textbf{\textcolor{findingsborder}{Key Findings (\Roman{findingsboxcounter})}}\\
+  }
+}
+
+% Table of contents styling
+\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection\par}
+\setbeamertemplate{subsection in toc}{\hspace{1.5em}$\bullet$~\inserttocsubsection\par}
+
+% Navigation patching for spacing
+\makeatletter
+\patchcmd{\slideentry}{\advance\beamer@tempdim by -.05cm}{\advance\beamer@tempdim by\beamer@vboxoffset\advance\beamer@tempdim by\beamer@boxsize\advance\beamer@tempdim by 1.2\pgflinewidth}{}{}
+\patchcmd{\slideentry}{\kern\beamer@tempdim}{\advance\beamer@tempdim by 2pt\advance\beamer@tempdim by\wd\beamer@sectionbox\kern\beamer@tempdim}{}{}
+\makeatother
+
+% Custom frametitle and header
+\setbeamertemplate{headline}{}
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip
+  \begin{beamercolorbox}[wd=\paperwidth,ht=3.5ex,dp=1ex,leftskip=0.5em]{frametitle}
+    \vbox to 2ex{%
+      \vfil
+      \usebeamerfont{frametitle}%
+      \ifx\insertsectionnumber\empty
+        \insertframetitle
+      \else
+      {\color[HTML]{83A0A6}\footnotesize§\insertsectionnumber}\quad\insertframetitle
+      \fi
+      \vfil
+    }
+  \end{beamercolorbox}
+  \vskip0.3ex
+  \begin{beamercolorbox}[wd=\paperwidth]{}
+    \centering
+    \insertnavigation{\paperwidth}
+  \end{beamercolorbox}
+  \vskip0.3ex
+}
+
+% Section navigation bar customization
+\definecolor{inactivesection}{HTML}{acbcbf}
+\definecolor{activesection}{HTML}{1f663a}
+
+\makeatletter
+\setbeamerfont{section in head/foot}{size=\scriptsize}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{section in head/foot}{%
+  \ifnum\c@section=\numexpr\insertsectionheadnumber\relax%
+    {\color{activesection}\insertsectionhead}%
+  \else%
+    {\color{inactivesection}\insertsectionhead}%
+  \fi%
+}
+\setbeamercolor{section in head/foot}{fg=activesection}
+\setbeamercolor{section in head/foot shaded}{fg=inactivesection}
+\setbeamercolor{mini frame}{fg=activesection, bg=}
+\setbeamercolor{mini frame shaded}{fg=inactivesection, bg=}
+\makeatother
