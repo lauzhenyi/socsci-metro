@@ -21,9 +21,16 @@
 - 🧾 **Roman numeral continuation for multi-part frames**  
   Automatically numbered `(I)`, `(II)`, etc., for slides that extend a single topic.
 
-## 📷 Example Slide
+## 📷 Previews
 
-![Example Slide](./example_slide.png)
+<p align="center">
+  <img src="./preview/test_page-0001.jpg" width="500"/>
+  <img src="./preview/test_page-0005.jpg" width="500"/>
+  <img src="./preview/test_page-0006.jpg" width="500"/>
+  <img src="./preview/test_page-0007.jpg" width="500"/>
+  <img src="./preview/test_page-0010.jpg" width="500"/>
+</p>
+
 
 ## 🛠 Usage
 
@@ -31,16 +38,34 @@
 \usepackage{socsci-metro}  % Make sure this .sty file is in the same folder or LaTeX path
 ```
 
-Then structure your slides using built-in environments like:
+Complete snippet for all 5 custom box types:
 
 ```latex
+% Research Question box
 \begin{rqbox}
-What explains variation in social trust across welfare regimes?
+To what extent does banana distribution predict umbrella ownership among penguins in urban jazz environments?
 \end{rqbox}
 
+% Hypothesis box
+\begin{hypobox}
+Penguins exposed to funkier rhythms are 42\% more likely to carry pastel-colored umbrellas during non-leap years.
+\end{hypobox}
+
+% Methodology box
 \begin{methodbox}
-Mixed-effects model with interaction terms for welfare type × year.
+We applied a recursive toast model using 17 types of marmalade as interaction controls within a Bayesian kazoo framework.
 \end{methodbox}
+
+% Key Findings box
+\begin{findingsbox}
+Orange marmalade had a statistically significant effect on kazoo enthusiasm (p < 0.0042), especially during Thursdays.
+\end{findingsbox}
+
+% Notes / Commentary box
+\begin{notesbox}
+Future research should investigate why hedgehogs remain unaffected by both toast density and jazz exposure.
+\end{notesbox}
+
 ```
 
 ## 📁 Contents
