@@ -73,7 +73,6 @@ Future research should investigate why hedgehogs remain unaffected by both toast
 ## 📁 Contents
 
 - `socsci-metro.sty` — The Beamer theme
-- `demo.tex` — Minimal working example
 - `README.md` — This file
 
 ## 🧑‍🏫 Designed For
