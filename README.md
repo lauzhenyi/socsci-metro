@@ -2,7 +2,7 @@
 
 ## 🔧 Built On
 
-**`socsci-metro`** is a LaTeX Beamer theme built on top of [Metropolis](https://github.com/matze/mtheme) Beamer theme, tailored for social science, sociology, and empirical research presentations. It enhances the clean visual style of `metropolis` with structure and function specific to research communication.presentations.
+**`socsci-metro`** is a LaTeX Beamer theme built on top of [Metropolis](https://github.com/matze/mtheme) Beamer theme, tailored for social science and empirical research presentations. It enhances the clean visual style of `metropolis` with structure and function specific to research communication.presentations.
 
 ## ✨ Features
 
