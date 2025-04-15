@@ -70,6 +70,29 @@ Future research should investigate why hedgehogs remain unaffected by both toast
 
 ```
 
+### 🔁 Resetting Box Counters
+
+If you want to manually reset the numbering of any custom box type (e.g., when starting a new section or chapter), you can use `\setcounter{<boxcounter>}{<value>}`.
+
+#### Available Counters
+
+- `rqboxcounter` – for **Research Question** boxes  
+- `hypoboxcounter` – for **Hypothesis** boxes  
+- `methodboxcounter` – for **Methodology** boxes  
+- `findingsboxcounter` – for **Key Findings** boxes  
+- `notesboxcounter` – for **Notes / Commentary** boxes
+
+#### Example
+
+To reset the *Key Findings* box numbering back to 1:
+
+```latex
+\setcounter{findingsboxcounter}{1}
+```
+
+You can place this command anywhere in your document to start the numbering fresh.
+
+
 ## 📁 Repository Contents
 
 - `socsci-metro.sty` — Theme style file  
