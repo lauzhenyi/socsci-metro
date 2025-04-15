@@ -107,8 +107,6 @@ You can place this command anywhere in your document to start the numbering fres
 - Students, instructors, and researchers giving structured academic talks
 - Presentations using methods from social statistics and empirical research
 
-👋 Feel free to fork, customize, and share — or open an issue if you have suggestions  
-(though full disclosure: I might be too lazy to actually implement them).
 
 
 ## 📜 License
