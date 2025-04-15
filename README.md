@@ -26,8 +26,8 @@
 ## 📷 Previews
 
 <p align="center">
-  <img src="./preview/test_page-0001.jpg" width="450"/>
-  <img src="./preview/test_page-0005.jpg" width="450"/>
+  <img src="./preview/test_page-0001.jpg" width="300"/>
+  <img src="./preview/test_page-0005.jpg" width="300"/>
   <img src="./preview/test_page-0006.jpg" width="450"/>
   <img src="./preview/test_page-0007.jpg" width="450"/>
   <img src="./preview/test_page-0010.jpg" width="500"/>
