@@ -80,7 +80,6 @@ If you want to manually reset the numbering of any custom box type (e.g., when s
 - `hypoboxcounter` – for **Hypothesis** boxes  
 - `methodboxcounter` – for **Methodology** boxes  
 - `findingsboxcounter` – for **Key Findings** boxes  
-- `notesboxcounter` – for **Notes / Commentary** boxes
 
 #### Example
 
